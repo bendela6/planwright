@@ -1,13 +1,13 @@
 ---
-name: project-guide
-description: Use when creating a new project to follow standard guidelines, or when auditing an existing project for guideline compliance. Invoke with argument 'new' or 'audit'. Supports React, Fastify, NestJS project types with comprehensive tooling standards.
+name: planwright
+description: Use when planning a new software project or auditing an existing project against standards. An AI-powered project planner that generates architecture designs, suggests tech stacks, and verifies compliance with your guidelines. Invoke with argument 'new' or 'audit'.
 ---
 
-# Project Guide
+# Planwright
 
-A comprehensive project guideline skill with two modes:
-- `/project-guide new` — scaffold a new project following recommended standards
-- `/project-guide audit` — check an existing project against guidelines and fix interactively
+An AI project planner with two modes:
+- `/planwright new` — design a new project and generate an architecture blueprint
+- `/planwright audit` — check an existing project against your standards and plan fixes interactively
 
 ## Argument Parsing
 

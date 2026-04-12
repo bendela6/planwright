@@ -17,7 +17,7 @@ export async function reviewRoutes(fastify: FastifyInstance) {
   // POST /api/review — Save review notes
   fastify.post<{ Body: ReviewBody }>('/api/review', async (request, reply) => {
     const { status, notes } = request.body;
-    const guideDir = join(fastify.config.projectDir, '.project-guide');
+    const guideDir = join(fastify.config.projectDir, '.planwright');
     const reviewFile = join(guideDir, 'review-notes.json');
 
     await mkdir(guideDir, { recursive: true });
@@ -28,7 +28,7 @@ export async function reviewRoutes(fastify: FastifyInstance) {
 
   // POST /api/approve — Approve the plan
   fastify.post('/api/approve', async (_request, reply) => {
-    const guideDir = join(fastify.config.projectDir, '.project-guide');
+    const guideDir = join(fastify.config.projectDir, '.planwright');
     const reviewFile = join(guideDir, 'review-notes.json');
 
     await mkdir(guideDir, { recursive: true });
@@ -43,7 +43,7 @@ export async function reviewRoutes(fastify: FastifyInstance) {
 
   // GET /api/review — Read current review status
   fastify.get('/api/review', async (_request, reply) => {
-    const reviewFile = join(fastify.config.projectDir, '.project-guide', 'review-notes.json');
+    const reviewFile = join(fastify.config.projectDir, '.planwright', 'review-notes.json');
 
     try {
       const content = await readFile(reviewFile, 'utf-8');

@@ -1,6 +1,6 @@
 node_modules
 dist
-.project-guide
+.planwright
 
 # Leftover build artifacts (tsc output — should be prevented by noEmit, but safety net)
 src/**/*.js

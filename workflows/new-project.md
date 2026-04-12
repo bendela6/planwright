@@ -67,28 +67,28 @@ Ask the user how they'd like to review the architecture:
 
 If the user selects browser:
 
-1. Write the architecture document as markdown to `{PROJECT_DIR}/.project-guide/architecture.md`
-2. Start the reviewer app:
+1. Write the architecture document as markdown to `{PROJECT_DIR}/.planwright/architecture.md`
+2. Start the reviewer app (auto-picks free ports):
 ```bash
-cd ~/.claude/skills/project-guide/reviewer-app
-PLAN_FILE={PROJECT_DIR}/.project-guide/architecture.md \
+cd ~/.claude/skills/planwright/reviewer-app
+PLAN_FILE={PROJECT_DIR}/.planwright/architecture.md \
 PROJECT_DIR={PROJECT_DIR} \
 pnpm run start &
 ```
-3. Tell the user: "Architecture review is ready at http://localhost:3333. You can:
+3. The startup script prints the URLs. Tell the user: "Architecture review is ready at the URL shown above. You can:
    - Review the architecture in the **Plan** tab
    - Add notes to any section by clicking or selecting text
    - Click **Send to agent** when you have feedback
    - Click **Approve** when the architecture looks good
    - Check implementation progress in the **Status** tab"
-4. Watch for `{PROJECT_DIR}/.project-guide/review-notes.json`:
+4. Watch for `{PROJECT_DIR}/.planwright/review-notes.json`:
    - If `status` is `"review"`: read the notes, apply changes to the architecture markdown, tell user to refresh the page
    - If `status` is `"approved"`: stop the app, save final `docs/architecture.md`, proceed to Step 4
    - Delete the review file after reading so the next round starts clean
 5. Clean up on approval:
 ```bash
-kill %1 %2  # stop the reviewer app
-rm -rf {PROJECT_DIR}/.project-guide/
+kill %1  # stop the reviewer app
+rm -rf {PROJECT_DIR}/.planwright/
 ```
 
 #### Markdown mode

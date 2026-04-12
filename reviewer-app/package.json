@@ -1,0 +1,32 @@
+{
+  "name": "@project-guide/reviewer",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3333",
+    "build": "tsc && vite build",
+    "preview": "vite preview --port 3333",
+    "server": "tsx server/index.ts",
+    "start": "concurrently \"vite --port 3333\" \"tsx server/index.ts\""
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "mermaid": "^11.0.0",
+    "fastify": "^5.0.0",
+    "@fastify/cors": "^10.0.0",
+    "@fastify/static": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "concurrently": "^9.0.0",
+    "tailwindcss": "^4.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0"
+  }
+}

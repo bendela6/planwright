@@ -1,3 +1,7 @@
 node_modules
 dist
 .project-guide
+
+# Leftover build artifacts (tsc output — should be prevented by noEmit, but safety net)
+src/**/*.js
+server/**/*.js
